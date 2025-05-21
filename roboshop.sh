@@ -23,19 +23,17 @@ do
     --hosted-zone-id $ZONE_ID \
     --change-batch '
     {
-        "Comment": "Creating 0r updating a record set for cognito endpoint"
+        "Comment": "Creating or Updating a record set for cognito endpoint"
         ,"Changes": [{
-        "Action" : "UPSERT"
-        ,"ResourceRecordSet" : {
-            "Name" : "'$RECORD_NAME'"
-            ,"Type" : "A"
-            ,"TTL" : 1
-            , "ResourceRecords : [{
-                "Value" : "'$IP'"
-                }]
-                
-                }
-        
+        "Action"              : "UPSERT"
+        ,"ResourceRecordSet"  : {
+            "Name"              : "'$RECORD_NAME'"
+            ,"Type"             : "A"
+            ,"TTL"              : 1
+            ,"ResourceRecords"  : [{
+                "Value"         : "'$IP'"
+            }]
+        }
         }]
     }'
-done    
+done
