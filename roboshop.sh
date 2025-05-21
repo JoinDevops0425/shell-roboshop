@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AMI_ID="ami-09c813fb71547fc4f"
-#SG_ID="sg-06c973cb91e2d2968"
+SG_ID="sg-06c973cb91e2d2968"
 ZONE_ID="Z0446403K6X4G8UHZOUM"
 DOMAIN_NAME="persistent.sbs"
 
