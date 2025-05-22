@@ -1,0 +1,14 @@
+[Unit]
+Description=Shipping Service
+
+[Service]
+User=roboshop
+// highlight-start
+Environment=CART_ENDPOINT=cart.persistent.sbs:8080
+Environment=DB_HOST=mysql.persistent.sbs
+// highlight-end
+ExecStart=/bin/java -jar /opt/app/shipping.jar
+SyslogIdentifier=shipping
+
+[Install]
+WantedBy=multi-user.target
