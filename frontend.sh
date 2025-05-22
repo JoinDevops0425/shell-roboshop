@@ -32,7 +32,7 @@ VALIDATE(){
 }
 
 
-dnf moduke disable nginx -y &>>LOG_FILE
+dnf module disable nginx -y &>>LOG_FILE
 VALIDATE $? "Disabling Nginx default version"
 
 dnf module enable nginx:1.24 -y &>>LOG_FILE
