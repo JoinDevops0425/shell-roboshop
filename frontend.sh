@@ -52,8 +52,9 @@ rm -rf /usr/share/nginx/html/*
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
 
 cd /user/share/nginx/html/
+VALIDATE $? "Changing directory to Nginx HTML folder"
 unzip /tmp/frontend.zip 
-VALIDATE $? "Copying frontend.zip to Nginx HTML folder"
+VALIDATE $? "Unzipping frontend.zip"
 
 rm -rf /etc/nginx/nginx.coinf
 
