@@ -48,6 +48,8 @@ VALIDATE $? "Creating App Directory"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
 VALIDATE $? "Downloading catalogue.zip"
 
+rm -rf /opt/app/*
+
 cd /opt/app
 unzip /tmp/catalogue.zip &>>LOG_FILE
 VALIDATE $? "Unzipping catalogue.zip"
