@@ -45,7 +45,7 @@ VALIDATE $? "Enablling Nodejs version 20"
 dnf install nodejs -y &>>LOG_FILE
 VALIDATE $? "Installing Nodejs"
 
-mkdie -p /opt/app
+mkdir -p /opt/app
 
 curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
 VALIDATE $? "Downloading user.zip"
