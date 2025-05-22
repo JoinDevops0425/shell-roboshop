@@ -81,7 +81,7 @@ VALIDATE $? "Copying MongoDB Repo file"
 dnf install mongodb-mongosh -y &>>LOG_FILE
 VALIDATE $? "Installing MongoDB client"
 
-STATUS=$(mongosh --host mongosb.persisten.sbs --eval 'db.getMmongo().getDBNames().indexOf("catalogue")')
+STATUS=$(mongosh --host mongodb.persistent.sbs --eval 'db.getMmongo().getDBNames().indexOf("catalogue")')
 
 if [ $STATUS -lt 0 ]
 then 
