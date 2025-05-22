@@ -70,13 +70,13 @@ fi
 cp $SCRIPT_DIR/cart.service /etc/systemd/system/cart.service
 VALIDATE $? "Copying cart.service file to systemd folder"
 
-systemctl daemeon-reload &>>$LOG_FILE
+systemctl daemon-reload &>>$LOG_FILE
 
 systemctl enable cart &>>$LOG_FILE
 VALIDATE $? "Enabling cart service"
 
 systemctl start cart &>>$LOG_FILE
-VALIDATE $? "Starting uscarter service"
+VALIDATE $? "Starting cart service"
 
 END_TIME=$(date +%s)
 TOTAL_TIME=$(( $END_TIME - $START_TIME ))
