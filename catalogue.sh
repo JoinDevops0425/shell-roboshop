@@ -87,7 +87,7 @@ STATUS=$(mongosh --host mongodb.persistent.sbs --eval 'db.getMongo().getDBNames(
 
 if [ $STATUS -lt 0 ]
 then 
-    mongosh --host mongodb.daws84s.site </app/db/master-data.js &>>$LOG_FILE
+    mongosh --host mongodb.persistent.sbs </opt/app/db/master-data.js &>>$LOG_FILE
     VALIDATE $? "Inputing catalogue database"
 else 
     echo "Catalogue database already exists"
