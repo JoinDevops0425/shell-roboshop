@@ -59,7 +59,7 @@ npm install &>>$LOG_FILE
 VALIDATE $? "Installing Nodejs dependencies"
 
 id roboshop
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then 
     useradd --system --home /opt/app --shell /sbin/nologin --comment "System User" roboshop
     VALIDATE $? "Creating roboshop user"
