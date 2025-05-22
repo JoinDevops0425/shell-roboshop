@@ -52,8 +52,8 @@ VALIDATE $? "Downloading cart.zip"
 
 rm -rf /opt/app/*
 cd /opt/app
-unzip /tmp/user.zip &>>$LOG_FILE
-VALIDATE $? "Unzipping user.zip"
+unzip /tmp/cart.zip &>>$LOG_FILE
+VALIDATE $? "Unzipping cart.zip"
 
 npm install &>>$LOG_FILE
 VALIDATE $? "Installing Nodejs dependencies"
