@@ -86,9 +86,9 @@ mysql -h mysql.persistent.sbs -u root -p$MYSQL_ROOT_PASSWORDD -e 'use cities' &>
 
 if [ $? -ne 0 ]
 then
-    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /app/db/schema.sql
-    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /app/db/app-user.sql 
-    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /app/db/master-data.sql
+    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /opt/app/db/schema.sql
+    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /opt/app/db/app-user.sql 
+    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /opt/app/db/master-data.sql
 else 
     echo "Database already exists"
 fi
