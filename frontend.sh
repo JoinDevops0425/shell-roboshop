@@ -57,8 +57,11 @@ unzip /tmp/frontend.zip
 VALIDATE $? "Unzipping frontend.zip"
 
 rm -rf /etc/nginx/nginx.coinf
+VALIDATE $? "Removing old nginx.conf file"
 
-mv $SCRIPT_DIR/nginx.conf /etc/nginx/nginx.conf
+
+
+cp $SCRIPT_DIR/nginx.conf /etc/nginx/nginx.conf
 
 VALIDATE $? "Copying nginx.conf to Nginx folder"
 
