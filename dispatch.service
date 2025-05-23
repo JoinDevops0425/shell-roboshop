@@ -7,7 +7,7 @@ Environment=AMQP_HOST=rabbitmq.persistent.sbs
 // highlight-end
 Environment=AMQP_USER=roboshop
 Environment=AMQP_PASS=roboshop123
-ExecStart=/app/dispatch
+ExecStart=/opt/app/dispatch
 SyslogIdentifier=dispatch
 
 [Install]
