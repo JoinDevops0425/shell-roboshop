@@ -48,7 +48,7 @@ cd /opt/app
 unzip /tmp/payment.zip &>>$LOG_FILE
 VALIDATE $? "Unzipping the payment.zip"
 
-pip3 install -r requiremnts.txt &>>$LOG_FILE
+pip3 install -r requirements.txt &>>$LOG_FILE
 VALIDATE $? "Installing the requirements"
 
 cp $SCRIPT_DIR/payment.service /etc/systemd/system/payment.service &>>$LOG_FILE
