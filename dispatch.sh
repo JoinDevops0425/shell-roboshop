@@ -34,7 +34,7 @@ VALIDATE(){
     fi
 }
 
-dnf install goland -y &>>$LOG_FILE
+dnf install golang -y &>>$LOG_FILE
 VALIDATE $? "Installing golang"
 
 mkdie -p /opt/app
