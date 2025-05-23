@@ -37,7 +37,7 @@ VALIDATE(){
 dnf install golang -y &>>$LOG_FILE
 VALIDATE $? "Installing golang"
 
-mkdie -p /opt/app
+mkdir -p /opt/app
 
 curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch-v3.zip 
 
