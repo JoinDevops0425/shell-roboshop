@@ -25,8 +25,8 @@ else
     echo "You are running as a root user" | tee -a $LOG_FILE
 fi
 
-echo "PLease enter root password"
-read -s MYSQL_ROOT_PASSWORD
+# echo "PLease enter root password"
+# read -s MYSQL_ROOT_PASSWORD
 
 VALIDATE(){
 
@@ -82,13 +82,13 @@ VALIDATE $? "Starting Shipping service"
 dnf install mysql -y &>>$LOG_FILE
 VALIDATE $? "Installing mysql client"
 
-mysql -h mysql.persistent.sbs -u root -p$MYSQL_ROOT_PASSWORDD -e 'use cities' &>>$LOG_FILE
+mysql -h mysql.persistent.sbs -u root -pRoboShop@1 -e 'use cities' &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
-    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /opt/app/db/schema.sql
-    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /opt/app/db/app-user.sql 
-    mysql -h mysql.persistent.sbs -uroot -p$MYSQL_ROOT_PASSWORD < /opt/app/db/master-data.sql
+    mysql -h mysql.persistent.sbs -uroot -pRoboShop@1 < /opt/app/db/schema.sql
+    mysql -h mysql.persistent.sbs -uroot -pRoboShop@1 < /opt/app/db/app-user.sql 
+    mysql -h mysql.persistent.sbs -uroot -pRoboShop@1 < /opt/app/db/master-data.sql
 else 
     echo "Database already exists"
 fi
